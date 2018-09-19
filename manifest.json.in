@@ -1,0 +1,15 @@
+{
+    "name": "upeertubeweb.darkeye",
+    "description": "A simple PeerTube WebApp",
+    "architecture": "@CLICK_ARCH@",
+    "title": "uPeerTube Web",
+    "hooks": {
+        "upeertubeweb": {
+            "apparmor": "upeertubeweb.apparmor",
+            "desktop":  "upeertubeweb.desktop"
+        }
+    },
+    "version": "0.1.0",
+    "maintainer": "Eran 'DarkEye' Uzan <etherpulse@gmail.com>",
+    "framework" : "ubuntu-sdk-15.04.5"
+}
