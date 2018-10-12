@@ -14,13 +14,13 @@ Page {
 	}
 
 	Component.onCompleted: {
-		infoModel.append({ name: i18n.tr("Get the source"), url: "https://github.com/dark-eye/udiaspora" ,icon:"text-css-symbolic"})
-		infoModel.append({ name: i18n.tr("Report issues"), url: "https://github.com/dark-eye/udiaspora/issues",icon:"dialog-warning-symbolic" })
-		infoModel.append({ name: i18n.tr("GNU General Public License v3.0"), url: "https://github.com/dark-eye/udiaspora/blob/master/LICENSE",icon:"note" })
-		infoModel.append({ name: i18n.tr("Contributors"), url: "https://github.com/dark-eye/udiaspora/graphs/contributors" ,icon:"contact-group"})
-		infoModel.append({ name: i18n.tr("Based on uMastonauts webapp"), url: "https://github.com/ChristianPauly/uMastodon" ,icon:"info"})
+		infoModel.append({ name: i18n.tr("Get the source"), url: "https://github.com/dark-eye/upeertubeweb" ,icon:"text-css-symbolic"})
+		infoModel.append({ name: i18n.tr("Report issues"), url: "https://github.com/dark-eye/upeertubeweb/issues",icon:"dialog-warning-symbolic" })
+		infoModel.append({ name: i18n.tr("GNU General Public License v3.0"), url: "https://github.com/dark-eye/upeertubeweb/blob/master/LICENSE",icon:"note" })
+		infoModel.append({ name: i18n.tr("Contributors"), url: "https://github.com/dark-eye/upeertubeweb/graphs/contributors" ,icon:"contact-group"})
 		infoModel.append({ name: i18n.tr("Donate"), url: "https://www.patreon.com/darkeyeos", icon:"like" })
-		infoModel.append({ name: i18n.tr("Telegram"), url: "https://t.me/uDiaspora", icon:"send" })
+		//infoModel.append({ name: i18n.tr("Telegram"), url: "https://t.me/uDiaspora", icon:"send" })
+		infoModel.append({ name: i18n.tr("Based on uMastonauts webapp"), url: "https://github.com/ChristianPauly/uMastodon" ,icon:"info"})
 	}
 
 	Column {
@@ -50,7 +50,7 @@ Page {
 			font.bold: true
 			color: theme.palette.normal.backgroundText
 			horizontalAlignment: Text.AlignHCenter
-			text: i18n.tr("uDiaspora WebApp")
+			text: i18n.tr("uPeerTube WebApp")
 		}
 
 	}

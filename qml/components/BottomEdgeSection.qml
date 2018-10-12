@@ -24,38 +24,36 @@ import Ubuntu.Components 1.3
 import Ubuntu.Web 0.2
 import "dialogs"
 
-Page {
-	id:_addPostPage
+Item {
+	id:_bottomSectionPath
+	
+	anchors.fill : parent
+	
 	property var filePickerComponent: null 
-	
-	header:BottomEdgeControlsHeader {
-		title: i18n.tr("Add Post")
-		z:10
-	}
-	
+	property var sectionPath: ""
 	
 	Loader {
-		id:addPostWebViewLoader
+		id:bottomSectionWebViewLoader
 		anchors.fill:parent
 		z: settings.incognitoMode ? 2 : 1
 		active:webviewPage.isLoggedin()
-		sourceComponent: active ? addPostComponent : undefined;
+		sourceComponent: active ? bottomWebviewComponent : undefined;
 		onZChanged: {
-			addPostWebViewLoader.sourceComponent= undefined;
+			bottomSectionWebViewLoader.sourceComponent= undefined;
 			if(active) {
-				addPostWebViewLoader.sourceComponent = addPostComponent;
+				bottomSectionWebViewLoader.sourceComponent = bottomWebviewComponent;
 			}
 		}
 	}
 	
 	Component {
-		id:addPostComponent
+		id:bottomWebviewComponent
 		WebView {
-			id: addPostWebView
+			id: bottomSectionWebView
 			anchors.fill:parent
 			visible:true
 			
-			incognito: settings.incognitoMode
+// 			incognito: settings.incognitoMode
 // 			context: settings.incognitoMode ? incognitoWebContext : appWebContext
 
 			preferences.localStorageEnabled: true
@@ -64,14 +62,14 @@ Page {
 			preferences.allowFileAccessFromFileUrls: true
 			preferences.allowUniversalAccessFromFileUrls: true
 			
-			url: helperFunctions.getInstanceURL() + "/status_messages/new"
+			url: helperFunctions.getInstanceURL() + sectionPath
 			
 			filePicker: pickerComponent
 			confirmDialog: ConfirmDialog {}
 			alertDialog: AlertDialog {}
 			promptDialog:PromptDialog {}
-			onLoadingStateChanged: if(!addPostWebView.loading) {
-				_addPostPage.resetURL();	
+			onLoadingStateChanged: if(!bottomSectionWebView.loading) {
+				_bottomSectionPath.resetURL();	
 			}
 			
 		}
@@ -91,18 +89,18 @@ Page {
 			
 		}
 		ActivityIndicator {
-			id: addPostLoadingIndicator
+			id: bottomSectionLoadingIndicator
 			width: units.gu(4)
 			anchors.centerIn:parent
-			running: webviewPage.isLoggedin() && ( addPostWebViewLoader.status != Loader.Ready || addPostWebViewLoader.item.loading)
+			running: webviewPage.isLoggedin() && ( bottomSectionWebViewLoader.status != Loader.Ready || bottomSectionWebViewLoader.item.loading)
 			visible: running
 		}
 	}
 	
 	function resetURL() {
-		var newPostURL =  helperFunctions.getInstanceURL() + "/status_messages/new";
-		if(addPostWebViewLoader.item.url != newPostURL) {
-			addPostWebViewLoader.item.url = newPostURL;
+		var newPostURL =  helperFunctions.getInstanceURL() + sectionPath;
+		if(bottomSectionWebViewLoader.item.url != newPostURL) {
+			bottomSectionWebViewLoader.item.url = newPostURL;
 		}
 	}
 

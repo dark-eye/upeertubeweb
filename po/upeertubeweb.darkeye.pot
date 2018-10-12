@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the upeertubeweb.darkeye package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: upeertubeweb.darkeye\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:17+0000\n"
+"POT-Creation-Date: 2018-10-12 21:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,56 +25,52 @@ msgstr ""
 msgid "Prompt Action"
 msgstr ""
 
-#: ../qml/components/AddPost.qml:32
-msgid "Add Post"
-msgstr ""
-
-#: ../qml/components/AddPost.qml:89
-msgid "Please log in"
-msgstr ""
-
 #: ../qml/components/BottomEdgeControlsHeader.qml:45
+msgid "Settings"
+msgstr ""
+
+#: ../qml/components/BottomEdgeControlsHeader.qml:50
 msgid "Go home"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:51
+#: ../qml/components/BottomEdgeControlsHeader.qml:56
 msgid "Reload"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:56
+#: ../qml/components/BottomEdgeControlsHeader.qml:61
 msgid "Go Back"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:63
-#: ../qml/pages/InstancePicker.qml:81
+#: ../qml/components/BottomEdgeControlsHeader.qml:69
+#: ../qml/pages/InstancePicker.qml:74
 msgid "Info"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:70
+#: ../qml/components/BottomEdgeControlsHeader.qml:76
 msgid "Links open externally"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:70
+#: ../qml/components/BottomEdgeControlsHeader.qml:76
 msgid "Links open internally"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:79
+#: ../qml/components/BottomEdgeControlsHeader.qml:85
 msgid "Incognito Mode"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:79
+#: ../qml/components/BottomEdgeControlsHeader.qml:85
 msgid "None Incognito"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:89
+#: ../qml/components/BottomEdgeControlsHeader.qml:95
 msgid "Show Bottom Controls"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:89
+#: ../qml/components/BottomEdgeControlsHeader.qml:95
 msgid "Hide Bottom Controls"
 msgstr ""
 
-#: ../qml/components/BottomEdgeControlsHeader.qml:98
+#: ../qml/components/BottomEdgeControlsHeader.qml:104
 msgid "Change Pod"
 msgstr ""
 
@@ -90,8 +86,8 @@ msgstr ""
 msgid "Open in browser"
 msgstr ""
 
-#: ../qml/pages/MainWebview.qml:104
-msgid "Loading "
+#: ../qml/components/BottomEdgeSection.qml:87
+msgid "Please log in"
 msgstr ""
 
 #: ../qml/pages/Information.qml:8
@@ -115,39 +111,59 @@ msgid "Contributors"
 msgstr ""
 
 #: ../qml/pages/Information.qml:21
-msgid "Based on uMastonauts webapp"
-msgstr ""
-
-#: ../qml/pages/Information.qml:22
 msgid "Donate"
 msgstr ""
 
 #: ../qml/pages/Information.qml:23
-msgid "Telegram"
+msgid "Based on uMastonauts webapp"
 msgstr ""
 
 #: ../qml/pages/Information.qml:53
-msgid "uDiaspora WebApp"
+msgid "uPeerTube WebApp"
 msgstr ""
 
-#: ../qml/pages/InstancePicker.qml:73
+#: ../qml/pages/BottomEdgePage.qml:40
+msgid "My Subscription"
+msgstr ""
+
+#: ../qml/pages/BottomEdgePage.qml:40
+msgid "My Videos"
+msgstr ""
+
+#: ../qml/pages/MainWebPage.qml:106
+msgid "Loading "
+msgstr ""
+
+#: ../qml/pages/InstancePicker.qml:66
 msgid "Choose a Diaspora instance"
 msgstr ""
 
-#: ../qml/pages/InstancePicker.qml:113
+#: ../qml/pages/InstancePicker.qml:106
 msgid "Search or enter a custom address"
 msgstr ""
 
-#: ../qml/pages/InstancePicker.qml:154
+#: ../qml/pages/InstancePicker.qml:147
 msgid "No pods fund for search : %1"
 msgstr ""
 
-#: ../qml/pages/InstancePicker.qml:154
+#: ../qml/pages/InstancePicker.qml:147
 msgid "No pods returned from server"
 msgstr ""
 
-#: ../qml/Main.qml:43
-msgid "OverView"
+#: ../qml/Main.qml:45
+msgid "Overview"
+msgstr ""
+
+#: ../qml/Main.qml:50
+msgid "Treanding"
+msgstr ""
+
+#: ../qml/Main.qml:55
+msgid "Subscriptions"
+msgstr ""
+
+#: ../qml/Main.qml:60
+msgid "Local"
 msgstr ""
 
 #: upeertubeweb.desktop.in.h:1

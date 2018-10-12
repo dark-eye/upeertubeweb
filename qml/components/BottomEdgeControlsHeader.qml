@@ -25,7 +25,7 @@ import Ubuntu.Components 1.3
 PageHeader {
 		id:_headersControls
 		
-		property var trailingSlots: !webviewPage.isOnDiaspora() ? 4 : 3
+		property var trailingSlots: !helperFunctions.getMainPage().isOnMainInstance() ? 4 : 4
 
 		StyleHints {
 			backgroundColor: settings.incognitoMode ? UbuntuColors.purple : theme.palette.normal.background
@@ -42,22 +42,28 @@ PageHeader {
 			
 			actions:[
 				Action {
+					text:i18n.tr("Settings")
+					iconName:"settings"
+					onTriggered: helperFunctions.getMainPage().currentView().url = helperFunctions.getInstanceURL() + "/my-account/settings";
+				},
+				Action {
 					text:i18n.tr("Go home")
 					iconName:"home"
-					onTriggered:webviewPage.currentView().goHome();
-					visible:!webviewPage.isOnMainInstance()
+					onTriggered:helperFunctions.getMainPage().currentView().goHome();
+					visible:!helperFunctions.getMainPage().isOnMainInstance()
 				},
 				Action {
 					text:i18n.tr("Reload")
 					iconName:"reload"
-					onTriggered:webviewPage.currentView().reload();
+					onTriggered:helperFunctions.getMainPage().currentView().reload();
 				},
 				Action {
 					text:i18n.tr("Go Back")
 					iconName:"back"
-					enabled:webviewPage.currentView().canGoBack
-					onTriggered:webviewPage.currentView().goBack()
+					enabled:helperFunctions.getMainPage().currentView().canGoBack();
+					onTriggered:helperFunctions.getMainPage().currentView().goBack()
 				},
+				
 				//-------------------------------------------------------------
 				Action {
 					text: i18n.tr("Info")
@@ -82,7 +88,7 @@ PageHeader {
 					checked: settings.incognitoMode
 					onToggled:{
 						settings.incognitoMode = checked;
-						webviewPage.currentView().reload();
+						helperFunctions.getMainPage().currentView().reload();
 					}
 				},
 				Action {

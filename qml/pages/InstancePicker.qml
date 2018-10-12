@@ -23,7 +23,7 @@ Page {
 		searchRunning = true;
 		var data = 'start=0&count=500';
         var http = new XMLHttpRequest();
-        http.open("GET", "https://instances.joinpeertube.org/api/v1/instances?" , true);
+        http.open("GET", appConfig.instancesAPIPath+"?"+data , true);
         http.setRequestHeader('Content-type', 'application/json; charset=utf-8')
         http.onreadystatechange = function() {
 			searchRunning = false;
@@ -46,7 +46,7 @@ Page {
 		//If  the  search starts with http(s) then go to the url 
 		if(searchTerm.indexOf("http") == 0 ) {
 			settings.instance = searchTerm
-			mainStack.push (Qt.resolvedUrl("./MainWebview.qml"))
+			mainStack.push (Qt.resolvedUrl("./MainWebPage.qml"))
 			return
 		}
 	

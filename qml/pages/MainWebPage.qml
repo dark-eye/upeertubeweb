@@ -19,6 +19,8 @@ Page {
 		visible: false
 	}
 	
+	Component.onCompleted: root.mainPage = webviewPage;
+	
 	Component {
 		id: pickerComponent
 		PickerDialog {}
@@ -169,7 +171,7 @@ Page {
 		anchors.bottom: parent.bottom
 		anchors.bottomMargin : visible ? 0 : -height
 		visible: webviewPage.currentView().visible && ( !settings.hideBottomControls || !webviewPage.isOnMainInstance() );
-		trailingSlots: !webviewPage.isOnMainInstance() ? 4 : 3
+		trailingSlots: 4
 		
 		leadingActionBar {
 			numberOfSlots:6
@@ -181,20 +183,18 @@ Page {
 	BottomEdge {
 		id: instancBottomEdge
 		visible: webviewPage.currentView().visible  && webviewPage.isOnMainInstance()
-		height:units.gu(37)
+		height:webviewPage.height - units.gu(3)
 		hint.iconName: "go-up"
 		hint.visible:visible
 		preloadContent: false
 		contentComponent: Component { 
-			AddPost {
+			BottomEdgePage {
 				anchors.fill:instancBottomEdge
 				height:instancBottomEdge.height
 				width:instancBottomEdge.width
 				filePickerComponent:pickerComponent
 			}
 		}
-
-		onCommitStarted: contentItem.resetURL();
 	}
 	
 	//========================== Functions =======================

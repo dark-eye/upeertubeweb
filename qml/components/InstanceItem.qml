@@ -18,7 +18,7 @@ ListItem {
 
     onClicked: {
         settings.instance = domain
-        mainStack.push (Qt.resolvedUrl("../pages/MainWebview.qml"))
+        mainStack.push (Qt.resolvedUrl("../pages/MainWebPage.qml"))
     }
 
     ListItemLayout {
